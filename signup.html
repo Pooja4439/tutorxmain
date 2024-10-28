@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Sign-in</title>
+  <style>
+    body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.header {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #210da4;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.social-buttons a {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.social-buttons img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="images/tutorx.png__1_-removebg-preview (2).png" alt="Logo Icon" class="mb-4" width="120px" height="40px">
+    </div>
+    <div class="header">Sign up</div>
+    <p>Already have an account? <a href="sign-up.html">Sign in</a></p>
+    <form>
+      <div class="form-group">
+        <label for="username">Username </label>
+        <input type="text" id="username" placeholder="Email address here">
+      </div>
+       <div class="form-group">
+        <label for="username">Email </label>
+        <input type="text" id="username" placeholder="Email address here">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary">Create Free Account</button>
+      </div>
+      <p><a href="forgot-password.html">Forgot your password?</a></p>
+    </form>
+    <div class="social-buttons">
+      <a href="#"><img src="images/search.png" alt="Google"></a>
+      <a href="#"><img src="images/github.png" alt="github"></a>
+      <a href="#"><img src="images/twitter.png" alt="twitter"></a>
+      <a href="#"><img src="images/linkedin.png" alt="linkedin"></a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Handle the sign-in logic here, such as validating input and making an API request
+    console.log('Username:', username);
+    console.log('Password:', password);
+  });
+});
+
+  </script>
+</body>
+</html>

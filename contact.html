@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-section, .right-section {
+            padding: 20px;
+            flex: 1;
+        }
+        .left-section {
+            background-color: #f9f9f9;
+        }
+        .left-section h1 {
+            color: #4a4a4a;
+        }
+        .left-section p {
+            color: #6c6c6c;
+        }
+        .left-section a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+        .left-section a:hover {
+            text-decoration: underline;
+        }
+        .left-section .social-icons a {
+            margin-right: 10px;
+            color: #6c63ff;
+            font-size: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #6c63ff;
+        }
+        .btn-primary {
+            background-color: #6c63ff;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .btn-primary:hover {
+            background-color: #5a55d4;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1>Get In Touch</h1>
+            <p>Fill in the form to the right to get in touch with someone on our team, and we will reach out shortly.</p>
+            <p>If you are seeking support please visit our <a href="#">support portal</a> before reaching out directly.</p>
+            <p><i class="fas fa-phone"></i> +0123-456-7890</p>
+            <p><i class="fas fa-envelope"></i> vermapooja26200@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> space it, Gurugram</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="logo">
+                <img src="images/tutorx.png__1_-removebg-preview (2).png" style="height: 40px; width:120px;" alt="Logo">
+            </div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-reason">Contact Reason:</label>
+                    <select id="contact-reason" class="form-control" required>
+                        <option value="">Select</option>
+                        <option value="support">Pricing</option>
+                        <option value="sales">login</option>
+                        <option value="general">courses</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

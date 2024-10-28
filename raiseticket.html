@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raise Ticket Form</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+    }
+    .form-container h2 {
+      margin-bottom: 20px;
+    }
+    .form-container .form-group label {
+      font-weight: bold;
+      text-decoration-color: ;
+    }
+    .form-container button {
+      width: 40%;
+      text-align: center;
+      justify-content: center; 
+      background-color: #007bff;
+      border-color: #007bff;
+      margin-left: 150px;
+    
+    }
+    .form-container button:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .text-center {
+    color: #3498db; /* Change this to any color you prefer */
+    font-size: 24px; /* Adjust the font size as per your requirement */
+    text-align: center;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container form-container">
+    <div class="text-center">
+      <img src="/images/tutorx.png__1_-removebg-preview (2).png" alt="Company Logo" style="max-width: 150px;">
+    </div>
+   
+    <form>
+      
+     
+      <div class="form-group">
+        <label for="student-name">Student Name</label>
+        <input type="text" class="form-control" id="student-name" placeholder="Enter student name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email ID">
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact Number</label>
+        <input type="tel" class="form-control" id="contact" placeholder="Enter contact number">
+      </div>
+      <div class="form-group">
+        <label for="category">Issue Category</label>
+        <select class="form-control" id="category">
+          <option value="">Select</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="screenshots">Upload Screenshots</label>
+        <input type="file" class="form-control-file" id="screenshots" multiple>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" rows="3" placeholder="Enter your issue here"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="comments">Additional Comments</label>
+        <textarea class="form-control" id="comments" rows="3" placeholder="Enter any additional comments"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

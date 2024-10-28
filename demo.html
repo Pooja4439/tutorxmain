@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html,body
+        {
+        width:100%;
+        height:100%;
+        margin:0px;
+        padding:0px;
+        overflow-x: hidden;
+        }
+      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Registration Form</title>
+    
+    <!-- Include intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            display: flex;
+            width: 50%;
+            max-width: 900px;
+            height: 500px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Left image section */
+        .image-section {
+            flex: 1;
+            background-image: url('images/New\ Project\ \(20\).png'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 140px;
+            height:80%;
+            
+        }
+
+        /* Right form section */
+        .form-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-section h2 {
+            margin-bottom: 15px;
+            color: rgb(22, 51, 183);
+        }
+
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-section input,
+        .form-section select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-section input[type="submit"] {
+            background: rgb(19,175,240);
+  background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .form-section input[type="submit"]:hover {
+            background-color: #357ae8;
+        }
+
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+                width: 90%;
+            }
+
+            .image-section {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Image Section -->
+        <div class="image-section">
+            <!-- Background image here -->
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="form-section">
+            <h2>Register Now</h2>
+            <form id="registrationForm">
+                <input type="text" name="Name" placeholder=" Name" required>
+                <input type="text" name="Email" placeholder="Email" required>
+                <input id="phone" type="tel" name="contactNumber" placeholder="Contact Number" required>
+                <select name="Year" required>
+                    <option value="Year1">Year</option>
+                    <option value="Year1">Year 1</option>
+                    <option value="Year2">Year 2</option>
+                    <option value="Year3">Year 3</option>
+                    <option value="Year4">Year 4</option>
+                    <option value="Year5">Year 5</option>
+                    <option value="Year6">Year 6</option>
+                    <option value="Year7">Year 7</option>
+                    <option value="Year8">Year 8</option>
+                    <option value="Year9">Year 9</option>
+                    <option value="Year10">Year 10</option>
+                    <option value="Year11">Year 11</option>
+                    <option value="Year12">Year 12</option>
+                    <option value="University">University</option>
+                    
+                </select>
+
+                <select name="Curriculum" required>
+                    <option value="Curriculum">Curriculum</option>
+                    <option value="IB">IB</option>
+                    <option value="VCE">VCE</option>
+                    <option value="New South Wales">New South Wales</option>
+                    <option value="Western Australia">Western Australia</option>
+                    <option value="Queensland">Queensland</option>
+                </select>
+                
+                <select name="timeZone" required>
+                    <option value="">Choose Time Zone</option>
+                    <option value="UTC-5">UTC-5</option>
+                    <option value="UTC+1">UTC+1</option>
+                    <option value="UTC+5:30">UTC+5:30</option>
+                </select>
+                <select name="course" required>
+                    <option value="course">Choose Course</option>
+                    <option value="Mathematics">NAPLAN(Maths)</option>
+                    <option value="Science">Naplan(Science)</option>
+                    <option value="History">Naplan(English)</option>
+                    <option value="Computer Science">VCE(Maths)</option>
+                    <option value="Mathematics">VCE(Science)</option>
+                    <option value="Science">VCE(English)</option>
+                    <option value="History">Selective</option>
+                    <option value="Computer Science">Non-Selective</option>
+                </select>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- Include jQuery (Optional, but recommended) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include intl-tel-input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <!-- Initialize the intl-tel-input -->
+    <script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "auto", // Detects user's country automatically
+            geoIpLookup: function(callback) {
+                fetch('https://ipinfo.io?token=YOUR_TOKEN_HERE') // Add your ipinfo.io token here
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = (data && data.country) ? data.country : "us";
+                    callback(countryCode);
+                });
+            },
+            preferredCountries: ["us", "gb", "in"], // Preferred countries
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Utility for formatting
+        });
+
+        // Form submission handler
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get the full phone number including country code
+            const phoneNumber = phoneInput.getNumber();
+            if (phoneInput.isValidNumber()) {
+                alert('Form submitted with valid phone number: ' + phoneNumber);
+            } else {
+                alert('Invalid phone number');
+            }
+        });
+    </script>
+
+</body>
+</html>
